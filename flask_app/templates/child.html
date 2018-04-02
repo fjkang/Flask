@@ -1,0 +1,8 @@
+{# 这是继承基础模板的子页面 #}
+{% extent 'base.html' %}
+
+{% block content %}
+    {% for bookmark in bookmarks %}
+        <p>{{ bookmark.title }}</p>
+    {% endfor %}
+{% endblock %}
