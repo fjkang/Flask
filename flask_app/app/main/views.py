@@ -1,30 +1,32 @@
-from app import app
-from flask import render_template, request, redirect, url_for, flash, make_response, session 
+from app import db
+from . import main
+from flask import (render_template, request, redirect, url_for, flash,
+                   make_response, session, current_app)
 from flask_login import login_required, login_user, current_user, logout_user
-from .models import User, Post, Category, Feedback, db
+from app.models import User, Post, Category, Feedback, db
 from .forms import ContactForm, LoginForm
-from .utils import send_mail
+from app.utils import send_mail
 
 
-@app.route('/')
+@main.route('/')
 def index():
     name, age, profession = "Jerry", 24, 'Programmer'
     template_context = dict(name=name, age=age, profession=profession)
     return render_template('index.html', **template_context)
 
 
-@app.route('/admin/')
+@main.route('/admin/')
 @login_required
 def admin():
     return render_template('admin.html')
 
 
-@app.route('/user/<int:user_id>/')
+@main.route('/user/<int:user_id>/')
 def user_profile(user_id):
     return f"Profile page of user #{user_id}"
 
 
-@app.route('/books/<genre>/')
+@main.route('/books/<genre>/')
 def books(genre):
     res = make_response(f"All Books in {genre} category")
     res.headers['Content-Type'] = 'text/plain'
@@ -32,25 +34,33 @@ def books(genre):
     return res
 
 
-@app.route('/login/', methods=['post', 'get'])
+@main.route('/login/', methods=['post', 'get'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('admin'))
-        
+        return redirect(url_for('.admin'))
+
     form = LoginForm()
     if form.validate_on_submit():
         user = db.session.query(User).filter(
             User.username == form.username.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember.data)
-            return redirect(url_for('admin'))
+            return redirect(url_for('.admin'))
 
         flash("Invalid username/password", 'error')
-        return redirect(url_for('login'))
+        return redirect(url_for('.login'))
     return render_template('login.html', form=form)
 
 
-@app.route('/contact/', methods=['get', 'post'])
+@main.route('/logout/')
+@login_required
+def logout():
+    logout_user()
+    flash("You have been logged out.")
+    return redirect(url_for('.login'))
+
+
+@main.route('/contact/', methods=['get', 'post'])
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
@@ -68,7 +78,7 @@ def contact():
 
         send_mail(
             "New Feedback",
-            app.config['MAIL_USERNAME'],
+            current_app.config['MAIL_USERNAME'],
             'mail/feedback.html',
             name=name,
             email=email,
@@ -76,12 +86,12 @@ def contact():
 
         print("\nData received. Now redirecting ...")
         flash("Message Recived", "Success")
-        return redirect(url_for('contact'))
+        return redirect(url_for('.contact'))
 
     return render_template('contact.html', form=form)
 
 
-@app.route('/cookie/')
+@main.route('/cookie/')
 def cookie():
     if not request.cookies.get('foo'):
         res = make_response("Setting cookie")
@@ -92,26 +102,26 @@ def cookie():
     return res
 
 
-@app.route('/delete-cookie/')
+@main.route('/delete-cookie/')
 def delete_cookie():
     res = make_response("Cookie Removed")
     res.set_cookie('foo', 'bar', max_age=0)
     return res
 
 
-@app.route('/article/', methods=['POST', 'GET'])
+@main.route('/article/', methods=['POST', 'GET'])
 def article():
     if request.method == 'POST':
         print(request.form)
         res = make_response()
         res.set_cookie('font', request.form.get('font'), 60 * 60 * 24 * 15)
-        res.headers['location'] = url_for('article')
+        res.headers['location'] = url_for('.article')
         return res, 302
 
     return render_template('article.html')
 
 
-@app.route('/visits-counter/')
+@main.route('/visits-counter/')
 def visits():
     if 'visits' in session:
         session['visits'] = session.get('visits') + 1
@@ -122,14 +132,14 @@ def visits():
     return f"Total visits: {session.get('visits')}"
 
 
-@app.route('/delete-visits/')
+@main.route('/delete-visits/')
 def delete_visits():
     session.pop('visits', None)
     # 删除'visits'的session
     return "visits deleted"
 
 
-@app.route('/session/')
+@main.route('/session/')
 def update_session():
     res = str(session.items())
 
@@ -137,9 +147,11 @@ def update_session():
     if 'cart_item' in session:
         if session['cart_item']['pineapples'] == '100':
             del session['cart_item']
+            return "{}"
         else:
             session['cart_item']['pineapples'] = '100'
         session.modified = True
     else:
         session['cart_item'] = cart_item
+    res = str(session['cart_item'])
     return res

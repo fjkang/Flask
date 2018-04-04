@@ -1,9 +1,10 @@
 import os
-from app import app, db
+from app import db, create_app
 from app.models import User, Post, Tag, Category, Employee, Feedback
 from flask_script import Manager, Shell
 from flask_migrate import MigrateCommand
 
+app = create_app(os.getenv('FLASK_ENV') or 'config.DevelopementConfig')
 manager = Manager(app)
 
 
