@@ -17,3 +17,9 @@
 ##### Flask-WTF:表单管理的拓展
 # ------------------------------
 #### 还有最后利用blueprint,把整个项目从原来的main2.py文件里的所有代码,重构成规范的flask项目
+
+requirements.txt可以通过pip命令自动生成和安装  
+生成requirements.txt文件  
+pip freeze > requirements.txt  
+安装requirements.txt依赖  
+pip install -r requirements.txt  
