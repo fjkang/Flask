@@ -1,0 +1,243 @@
+{
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "channel": "https://repo.continuum.io/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.6,<3.7.0a0",
+    "setuptools"
+  ],
+  "extracted_package_dir": "C:\\Users\\K\\AppData\\Local\\conda\\conda\\pkgs\\isort-4.3.4-py36_0",
+  "files": [
+    "Lib/site-packages/isort-4.3.4-py3.6.egg-info/PKG-INFO",
+    "Lib/site-packages/isort-4.3.4-py3.6.egg-info/SOURCES.txt",
+    "Lib/site-packages/isort-4.3.4-py3.6.egg-info/dependency_links.txt",
+    "Lib/site-packages/isort-4.3.4-py3.6.egg-info/entry_points.txt",
+    "Lib/site-packages/isort-4.3.4-py3.6.egg-info/requires.txt",
+    "Lib/site-packages/isort-4.3.4-py3.6.egg-info/top_level.txt",
+    "Lib/site-packages/isort/__init__.py",
+    "Lib/site-packages/isort/__main__.py",
+    "Lib/site-packages/isort/__pycache__/__init__.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/__main__.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/hooks.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/isort.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/main.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/natural.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/pie_slice.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/pylama_isort.cpython-36.pyc",
+    "Lib/site-packages/isort/__pycache__/settings.cpython-36.pyc",
+    "Lib/site-packages/isort/hooks.py",
+    "Lib/site-packages/isort/isort.py",
+    "Lib/site-packages/isort/main.py",
+    "Lib/site-packages/isort/natural.py",
+    "Lib/site-packages/isort/pie_slice.py",
+    "Lib/site-packages/isort/pylama_isort.py",
+    "Lib/site-packages/isort/settings.py",
+    "Scripts/isort-script.py",
+    "Scripts/isort.exe"
+  ],
+  "fn": "isort-4.3.4-py36_0.tar.bz2",
+  "license": "MIT",
+  "link": {
+    "source": "C:\\Users\\K\\AppData\\Local\\conda\\conda\\pkgs\\isort-4.3.4-py36_0",
+    "type": 1
+  },
+  "md5": "bf4ce7dea0bbe9ee824bb94b32291c67",
+  "name": "isort",
+  "package_tarball_full_path": "C:\\Users\\K\\AppData\\Local\\conda\\conda\\pkgs\\isort-4.3.4-py36_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Lib/site-packages/isort-4.3.4-py3.6.egg-info/PKG-INFO",
+        "path_type": "hardlink",
+        "sha256": "9e41eb5d4a9ec7758b2bb19a9458fbe1c9f59c7c3f153549a1bcbde5d85550ed",
+        "sha256_in_prefix": "9e41eb5d4a9ec7758b2bb19a9458fbe1c9f59c7c3f153549a1bcbde5d85550ed",
+        "size_in_bytes": 23480
+      },
+      {
+        "_path": "Lib/site-packages/isort-4.3.4-py3.6.egg-info/SOURCES.txt",
+        "path_type": "hardlink",
+        "sha256": "44e50cda1da8e2118430a628323e5db9e28b6859727425d20843c93a3a0e80a0",
+        "sha256_in_prefix": "44e50cda1da8e2118430a628323e5db9e28b6859727425d20843c93a3a0e80a0",
+        "size_in_bytes": 428
+      },
+      {
+        "_path": "Lib/site-packages/isort-4.3.4-py3.6.egg-info/dependency_links.txt",
+        "path_type": "hardlink",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "sha256_in_prefix": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_in_bytes": 1
+      },
+      {
+        "_path": "Lib/site-packages/isort-4.3.4-py3.6.egg-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "d8cf7d7921699ed7839b77a45bc8f26b66b7034faf167b4a753d5f3fddd3ca4b",
+        "sha256_in_prefix": "d8cf7d7921699ed7839b77a45bc8f26b66b7034faf167b4a753d5f3fddd3ca4b",
+        "size_in_bytes": 148
+      },
+      {
+        "_path": "Lib/site-packages/isort-4.3.4-py3.6.egg-info/requires.txt",
+        "path_type": "hardlink",
+        "sha256": "c6d8eb66023e2ee21ccde8f70e2e6a3be78033a00bebdca75635ae874aea5671",
+        "sha256_in_prefix": "c6d8eb66023e2ee21ccde8f70e2e6a3be78033a00bebdca75635ae874aea5671",
+        "size_in_bytes": 34
+      },
+      {
+        "_path": "Lib/site-packages/isort-4.3.4-py3.6.egg-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "9ab04ba15a499d05816e730e49dce48cdd44f59f9edd977e311968f3c6ecb549",
+        "sha256_in_prefix": "9ab04ba15a499d05816e730e49dce48cdd44f59f9edd977e311968f3c6ecb549",
+        "size_in_bytes": 6
+      },
+      {
+        "_path": "Lib/site-packages/isort/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "2443ed45db197657ba4d5f191f1063ef73ae0f688b518e0f5c39fbd50055c107",
+        "sha256_in_prefix": "2443ed45db197657ba4d5f191f1063ef73ae0f688b518e0f5c39fbd50055c107",
+        "size_in_bytes": 1379
+      },
+      {
+        "_path": "Lib/site-packages/isort/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "f1ba2170ae570909601781e15d08613c9066682d92e06ab3a85c21740ba2dd02",
+        "sha256_in_prefix": "f1ba2170ae570909601781e15d08613c9066682d92e06ab3a85c21740ba2dd02",
+        "size_in_bytes": 76
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/__init__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "5434ec42e7495bf9b69a48dec792af5ec5e939b44c73c020484d7734a4515c1f",
+        "sha256_in_prefix": "5434ec42e7495bf9b69a48dec792af5ec5e939b44c73c020484d7734a4515c1f",
+        "size_in_bytes": 1546
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/__main__.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "ac545f48f906245ad7d4b3997a7e1efc11e758f3e5ea28ea0b5f6d67ae998854",
+        "sha256_in_prefix": "ac545f48f906245ad7d4b3997a7e1efc11e758f3e5ea28ea0b5f6d67ae998854",
+        "size_in_bytes": 215
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/hooks.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "57588c5e5af1f811efdb1ad4d5146c515833e7b5bb3ac81f1d56e9539ac0dd26",
+        "sha256_in_prefix": "57588c5e5af1f811efdb1ad4d5146c515833e7b5bb3ac81f1d56e9539ac0dd26",
+        "size_in_bytes": 2935
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/isort.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "1d9c52a8c8318b9e7d0bebb88bde29c6e6ea9fdb5d2b789f9d1d1f37dd467ff4",
+        "sha256_in_prefix": "1d9c52a8c8318b9e7d0bebb88bde29c6e6ea9fdb5d2b789f9d1d1f37dd467ff4",
+        "size_in_bytes": 30640
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/main.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "0cb3d1d027cba2de075d233cb392774c3964e6caf15a65cdc856329b3ec04cc4",
+        "sha256_in_prefix": "0cb3d1d027cba2de075d233cb392774c3964e6caf15a65cdc856329b3ec04cc4",
+        "size_in_bytes": 15329
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/natural.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "e7670d4862b30801c17b0b0ed0f4ea6293b01648676ec77ace4a3395588acac1",
+        "sha256_in_prefix": "e7670d4862b30801c17b0b0ed0f4ea6293b01648676ec77ace4a3395588acac1",
+        "size_in_bytes": 2258
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/pie_slice.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "ea64ec17486c17bafb34ae4474348942c88df46b035090c6a720d320c4556e43",
+        "sha256_in_prefix": "ea64ec17486c17bafb34ae4474348942c88df46b035090c6a720d320c4556e43",
+        "size_in_bytes": 14890
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/pylama_isort.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "c833e092e2337a117495fcbc64dd40e6cc72de481cd57bada7c983dc64c4bd61",
+        "sha256_in_prefix": "c833e092e2337a117495fcbc64dd40e6cc72de481cd57bada7c983dc64c4bd61",
+        "size_in_bytes": 959
+      },
+      {
+        "_path": "Lib/site-packages/isort/__pycache__/settings.cpython-36.pyc",
+        "path_type": "hardlink",
+        "sha256": "5f770f0952d82747119930b726b3e1e2e278acf2c04175741694d588c7f01ffa",
+        "sha256_in_prefix": "5f770f0952d82747119930b726b3e1e2e278acf2c04175741694d588c7f01ffa",
+        "size_in_bytes": 10385
+      },
+      {
+        "_path": "Lib/site-packages/isort/hooks.py",
+        "path_type": "hardlink",
+        "sha256": "5b315bf1e499021d9f782e47a470c0e4c8e26f3aed46533ddd9560357ea4e0b6",
+        "sha256_in_prefix": "5b315bf1e499021d9f782e47a470c0e4c8e26f3aed46533ddd9560357ea4e0b6",
+        "size_in_bytes": 2808
+      },
+      {
+        "_path": "Lib/site-packages/isort/isort.py",
+        "path_type": "hardlink",
+        "sha256": "2dfd62cecc20ab28d5f80748a33453e3f5cf6ea290f1beb3534fcffa3881077e",
+        "sha256_in_prefix": "2dfd62cecc20ab28d5f80748a33453e3f5cf6ea290f1beb3534fcffa3881077e",
+        "size_in_bytes": 52773
+      },
+      {
+        "_path": "Lib/site-packages/isort/main.py",
+        "path_type": "hardlink",
+        "sha256": "651505d89edbaea764ed5d2ceeed2bad9fcc2896e3b613993db2af18febbadcd",
+        "sha256_in_prefix": "651505d89edbaea764ed5d2ceeed2bad9fcc2896e3b613993db2af18febbadcd",
+        "size_in_bytes": 20087
+      },
+      {
+        "_path": "Lib/site-packages/isort/natural.py",
+        "path_type": "hardlink",
+        "sha256": "865716b0629f2140b802d8e9e4822a0c29a0d6669d63a6af7bda0d8931a32744",
+        "sha256_in_prefix": "865716b0629f2140b802d8e9e4822a0c29a0d6669d63a6af7bda0d8931a32744",
+        "size_in_bytes": 1794
+      },
+      {
+        "_path": "Lib/site-packages/isort/pie_slice.py",
+        "path_type": "hardlink",
+        "sha256": "1ce7cae191c0da3d5ba95486cde7e1713e633fae3f2dd978c7abcd49150d753e",
+        "sha256_in_prefix": "1ce7cae191c0da3d5ba95486cde7e1713e633fae3f2dd978c7abcd49150d753e",
+        "size_in_bytes": 13181
+      },
+      {
+        "_path": "Lib/site-packages/isort/pylama_isort.py",
+        "path_type": "hardlink",
+        "sha256": "c05e8d38456e89b99ed25fb9a47f69096d63e2f19a15a9aec25978f784e7cc32",
+        "sha256_in_prefix": "c05e8d38456e89b99ed25fb9a47f69096d63e2f19a15a9aec25978f784e7cc32",
+        "size_in_bytes": 785
+      },
+      {
+        "_path": "Lib/site-packages/isort/settings.py",
+        "path_type": "hardlink",
+        "sha256": "9c3428c8b1075c0c03fcc99a9c752056f0b001c2d899070751e53871e9e431ec",
+        "sha256_in_prefix": "9c3428c8b1075c0c03fcc99a9c752056f0b001c2d899070751e53871e9e431ec",
+        "size_in_bytes": 14224
+      },
+      {
+        "_path": "Scripts/isort-script.py",
+        "path_type": "hardlink",
+        "sha256": "279a435b15b7bf7d907491153e6a50e203a0c62203eee9eacaa6ab2578b56840",
+        "sha256_in_prefix": "279a435b15b7bf7d907491153e6a50e203a0c62203eee9eacaa6ab2578b56840",
+        "size_in_bytes": 204
+      },
+      {
+        "_path": "Scripts/isort.exe",
+        "path_type": "hardlink",
+        "sha256": "993203a406e04936a07829b1f482fd27d739b640482e213f4c49ea1ee78a5fcf",
+        "sha256_in_prefix": "993203a406e04936a07829b1f482fd27d739b640482e213f4c49ea1ee78a5fcf",
+        "size_in_bytes": 40960
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "defaults/win-64::isort==4.3.4=py36_0",
+  "size": 78136,
+  "subdir": "win-64",
+  "timestamp": 1519152790071,
+  "url": "https://repo.continuum.io/pkgs/main/win-64/isort-4.3.4-py36_0.tar.bz2",
+  "version": "4.3.4"
+}
