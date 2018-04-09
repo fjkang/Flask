@@ -1,0 +1,115 @@
+2018-04-09 18:13:02,629 INFO: microblog startup [in E:\Flask\microblog\app\__init__.py:41]
+2018-04-09 18:14:44,316 INFO: microblog startup [in E:\Flask\microblog\app\__init__.py:41]
+2018-04-09 18:14:49,864 ERROR: Exception on /user/fjkang/ [GET] [in E:\Flask\microblog\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\Flask\microblog\app\views.py", line 106, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Flask\microblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "E:\Flask\microblog\app\templates\base.html", line 27, in top-level template code
+    {% block content %}{% endblock %}
+  File "E:\Flask\microblog\app\templates\user.html", line 11, in block "content"
+    {% if user.id == g.user.id %}<p><a href="{{url_for2('edit')}}">edit</a></p>{% endif %}
+jinja2.exceptions.UndefinedError: 'url_for2' is undefined
+2018-04-09 18:15:34,732 INFO: microblog startup [in E:\Flask\microblog\app\__init__.py:41]
+2018-04-09 18:15:40,708 ERROR: Exception on /user/fjkang/ [GET] [in E:\Flask\microblog\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\Flask\microblog\app\views.py", line 106, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Flask\microblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "E:\Flask\microblog\app\templates\base.html", line 27, in top-level template code
+    {% block content %}{% endblock %}
+  File "E:\Flask\microblog\app\templates\user.html", line 11, in block "content"
+    {% if user.id == g.user.id %}<p><a href="{{url_for2('edit')}}">edit</a></p>{% endif %}
+jinja2.exceptions.UndefinedError: 'url_for2' is undefined
+2018-04-09 18:15:49,678 ERROR: Exception on /user/fjkang/ [GET] [in E:\Flask\microblog\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\Flask\microblog\app\views.py", line 106, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "E:\Flask\microblog\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\Flask\microblog\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Flask\microblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "E:\Flask\microblog\app\templates\base.html", line 27, in top-level template code
+    {% block content %}{% endblock %}
+  File "E:\Flask\microblog\app\templates\user.html", line 11, in block "content"
+    {% if user.id == g.user.id %}<p><a href="{{url_for2('edit')}}">edit</a></p>{% endif %}
+jinja2.exceptions.UndefinedError: 'url_for2' is undefined
+2018-04-09 18:17:22,035 INFO: microblog startup [in E:\Flask\microblog\app\__init__.py:41]
