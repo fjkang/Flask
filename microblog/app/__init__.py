@@ -28,6 +28,7 @@ if not app.debug:
                                'microblog failure', credentials)
     mail_handler.setLevel(logging.ERROR)
     app.logger.addHandler(mail_handler)
+    
     # 文件日志的形式保存错误
     file_handler = RotatingFileHandler('tmp/microblog.log', 'a',
                                        1 * 1024 * 1024, 10)

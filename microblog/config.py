@@ -1,8 +1,8 @@
 import os
 # 数据库的设置
 basedir = os.path.abspath(os.path.dirname(__file__))
-
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+db_path = os.path.join(basedir, 'app.db')
+SQLALCHEMY_DATABASE_URI = f'sqlite:///{db_path}' # f标签里{}不会被/转义
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -18,9 +18,16 @@ OPENID_PROVIDERS = [
     { 'name': 'MyOpenID', 'url': 'https://www.myopenid.com' }]
 
 # 模拟邮箱服务器设置
+# 开启邮箱服务器命令:python -m smtpd -n -c DebuggingServer localhost:25
 MAIL_SERVER = 'localhost'
 MAIL_PORT = 25
 MAIL_USERNAME = None
 MAIL_PASSWORD = None
 # 管理员列表
 ADMINS = ['you@example.com']
+
+# 分页参数
+POSTS_PER_PAGE = 3
+
+# 全文搜索数据库
+WHOOSH_BASE = os.path.join(basedir, 'search.db')
