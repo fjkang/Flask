@@ -6,18 +6,23 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
 
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
+from .momentjs import momentjs
 
 app = Flask(__name__)
 app.config.from_object('config')
+# 初始化数据库
 db = SQLAlchemy(app)
-
+# 初始化登陆管理
 lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'login'
-
+# 初始化openid
 oid = OpenID(app, os.path.join(basedir, 'temp'))
-
+# 初始化邮件服务
 mail = Mail(app)
+# 初始化时间格式化脚本
+app.jinja_env.globals['momentjs'] = momentjs
+
 
 if not app.debug:
     import logging

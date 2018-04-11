@@ -10,13 +10,13 @@
             <td>{{ form.post(size=30, maxlength=140) }}</td>
             <td>
                 {% for error in form.errors.post %}
-                <br><span style="color:red;">[{{ error }}]</span>
+                <br><span class="help_panel" style="color:red;">[{{ error }}]</span>
                 {% endfor %}
             </td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Post!"></td>
+            <td><input class="btn" type="submit" value="Post!"></td>
             <td></td>
         </tr>
     </table>

@@ -2,6 +2,8 @@ from datetime import datetime
 
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask_login import login_user, logout_user, current_user, login_required
+from flask_babel import gettext
+
 from app import app, db, lm, oid
 from .forms import LoginForm, EditForm, PostForm
 from .models import User, Post
@@ -58,7 +60,7 @@ def login():
 @oid.after_login
 def after_login(resp):
     if resp.email is None or resp.email == "":
-        flash('Invalid login. Please try again.')
+        flash(gettext('Invalid login. Please try again.'))
         return redirect(url_for('login'))
     user = User.query.filter_by(email=resp.email).first()
     if user is None:
@@ -69,7 +71,7 @@ def after_login(resp):
         user = User(nickname=nickname, email=resp.email)
         db.session.add(user)
         db.session.commit()
-    # 使用户关注自己
+    # 登陆后用户关注自己
     if not user.is_following(user):
         db.session.add(user.follow(user))
         db.session.commit()
@@ -171,3 +173,5 @@ def internal_error(error):
 def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500
+
+

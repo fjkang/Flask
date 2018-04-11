@@ -25,7 +25,6 @@ MAIL_USERNAME = None
 MAIL_PASSWORD = None
 # 管理员列表
 ADMINS = ['you@example.com']
-
 # 分页参数
 POSTS_PER_PAGE = 3
 

@@ -3,6 +3,7 @@ from .decorators import async
 from flask import render_template
 from flask_mail import Message
 
+
 from app import mail, app
 from config import ADMINS
 
