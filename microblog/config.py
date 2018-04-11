@@ -29,5 +29,3 @@ ADMINS = ['you@example.com']
 # 分页参数
 POSTS_PER_PAGE = 3
 
-# 全文搜索数据库
-WHOOSH_BASE = os.path.join(basedir, 'search.db')

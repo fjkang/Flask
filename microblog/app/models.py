@@ -1,4 +1,3 @@
-import flask_whooshalchemy as whooshalchemy
 
 from app import db, app
 from hashlib import md5
@@ -96,5 +95,3 @@ class Post(db.Model):
 
     def __repr__(self):
         return f'<Post {self.body}>'
-
-whooshalchemy.whoosh_index(app, Post)

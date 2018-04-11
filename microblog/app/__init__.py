@@ -3,6 +3,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_openid import OpenID
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 
@@ -15,6 +16,8 @@ lm.init_app(app)
 lm.login_view = 'login'
 
 oid = OpenID(app, os.path.join(basedir, 'temp'))
+
+mail = Mail(app)
 
 if not app.debug:
     import logging
