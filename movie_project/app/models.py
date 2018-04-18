@@ -1,16 +1,13 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-import datetime
+from flask_login import UserMixin
 
-app = Flask(__name__)
-app.config[
-    "SQLALCHEMY_DATABASE_URI"] = "mysql://root:root@localhost:3306/movie"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
+from app import db, login
+from datetime import datetime
 
-db = SQLAlchemy(app)
+@login.user_loader
+def load_user(id):
+    return Admin.query.get(int(id))
 
-
-# 用户
+#用户
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)  #编号
@@ -18,7 +15,7 @@ class User(db.Model):
     pwd = db.Column(db.String(100))  #密码
     email = db.Column(db.String(100), unique=True)  #邮箱
     phone = db.Column(db.String(11), unique=True)  #电话
-    info = db.Column(db.Text)  #简介
+    info = db.Column(db.Text)  #简介``
     face = db.Column(db.String(255), unique=True)  #头像
     addtime = db.Column(
         db.DateTime, index=True, default=datetime.utcnow)  #创建时间
@@ -29,6 +26,31 @@ class User(db.Model):
 
     def __repr__(self):
         return f"<User {self.name}>"
+
+
+# 管理员
+class Admin(db.Model, UserMixin):
+    __tablename__ = 'admin'
+    id = db.Column(db.Integer, primary_key=True)  #编号
+    name = db.Column(db.String(100), unique=True)  #昵称
+    pwd = db.Column(db.String(100))  #密码
+    id_super = db.Column(db.SmallInteger)  #超级管理员, 0为超级管理员
+    role_id = db.Column(db.Integer, db.ForeignKey('role.id'))  #所属角色
+    addtime = db.Column(
+        db.DateTime, index=True, default=datetime.utcnow)  #创建时间
+    # adminlogs = db.relationship('Adminlog', backref='admin')  #管理员登陆日志外键关系
+    # oplogs = db.relationship('Oplog', backref='admin')  # 管理员操作日志外键关系
+
+    def __repr__(self):
+        return f"<Admin {self.name}>"
+
+    def set_pwd(self, pwd):
+        from werkzeug.security import generate_password_hash
+        self.pwd_hash = generate_password_hash(pwd)
+
+    def check_pwd(self, pwd):
+        from werkzeug.security import check_password_hash
+        return check_password_hash(self.pwd, pwd)
 
 
 # 用户登陆日志
@@ -110,7 +132,7 @@ class Comment(db.Model):
 
 #收藏电影
 class Moviecol(db.Model):
-    __tablename__ = "moviecol"    
+    __tablename__ = "moviecol"
     id = db.Column(db.Integer, primary_key=True)  #编号
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'))  #所属电影
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))  #所属用户
@@ -120,9 +142,10 @@ class Moviecol(db.Model):
     def __repr__(self):
         return f"<Moviecol {self.id}>"
 
+
 # 权限
 class Auth(db.Model):
-    __tablename__ = "auth"    
+    __tablename__ = "auth"
     id = db.Column(db.Integer, primary_key=True)  #编号
     name = db.Column(db.String(100), unique=True)  #名称
     url = db.Column(db.String(255), unique=True)  #地址
@@ -135,13 +158,13 @@ class Auth(db.Model):
 
 # 角色
 class Role(db.Model):
-    __tablename__ = "role"    
+    __tablename__ = "role"
     id = db.Column(db.Integer, primary_key=True)  #编号
     name = db.Column(db.String(100), unique=True)  #名称
     auths = db.Column(db.String(600))  #权限
     addtime = db.Column(
         db.DateTime, index=True, default=datetime.utcnow)  #最后登陆时间
+    admins = db.relationship('Admin', backref='role')  #管理员外键关系
 
     def __repr__(self):
         return f"<Role {self.name}>"
-
